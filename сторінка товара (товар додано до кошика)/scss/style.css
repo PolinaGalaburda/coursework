@@ -1,0 +1,842 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.woff") format("woff"), url("../fonts/Raleway-Regular.ttf") format("ttf"), url("../fonts/Raleway-Regular.eot") format("eot");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraLight.woff") format("woff"), url("../fonts/Raleway-ExtraLight.ttf") format("ttf"), url("../fonts/Raleway-ExtraLight.eot") format("eot");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Light.woff") format("woff"), url("../fonts/Raleway-Light.ttf") format("ttf"), url("../fonts/Raleway-Light.eot") format("eot");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Medium.woff") format("woff"), url("../fonts/Raleway-Medium.ttf") format("ttf"), url("../fonts/Raleway-Medium.eot") format("eot");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-SemiBold.woff") format("woff"), url("../fonts/Raleway-SemiBold.ttf") format("ttf"), url("../fonts/Raleway-SemiBold.eot") format("eot");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.woff") format("woff"), url("../fonts/Raleway-Bold.ttf") format("ttf"), url("../fonts/Raleway-Bold.eot") format("eot");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBold.woff") format("woff"), url("../fonts/Raleway-ExtraBold.ttf") format("ttf"), url("../fonts/Raleway-ExtraBold.eot") format("eot");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Black.woff") format("woff"), url("../fonts/Raleway-Black.ttf") format("ttf"), url("../fonts/Raleway-Black.eot") format("eot");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff"), url("../fonts/DelaGothicOne-Regular.ttf") format("ttf"), url("../fonts/DelaGothicOne-Regular.eot") format("eot");
+}
+html {
+  min-width: 477px;
+}
+
+body {
+  font-family: "Raleway";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 477px;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.header {
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 19px;
+  height: 99px;
+  align-items: center;
+}
+.header__block_logo {
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+.header__block_logo:hover {
+  opacity: 0;
+}
+.header__logo-icon {
+  width: 184px;
+}
+.header__input {
+  background: none;
+  display: none;
+}
+.header__label {
+  display: none;
+}
+@media (max-width: 959px) {
+  .header__label {
+    display: block;
+    width: 20px;
+    text-align: center;
+  }
+  .header__label::before {
+    content: url("../img/burger.svg");
+  }
+}
+@media (max-width: 959px) {
+  .header__nav_left {
+    display: none;
+  }
+}
+.header__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+@media (max-width: 959px) {
+  .header__list {
+    position: absolute;
+    flex-direction: column;
+    background: #FFFFFF;
+    width: 90%;
+    z-index: 100;
+    filter: drop-shadow(6px 6px 8px rgba(71, 71, 71, 0.25)) drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25));
+  }
+}
+.header__link {
+  margin-right: 30px;
+}
+@media (max-width: 959px) {
+  .header__link {
+    font-family: "Dela Gothic One";
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    background: #FFFFFF;
+  }
+}
+.header__a:hover {
+  color: #DA1F39;
+  font-weight: 700;
+}
+@media (max-width: 959px) {
+  .header__a:hover::after {
+    content: url("../img/scroll down.svg");
+    display: inline-block;
+    margin-left: 13px;
+  }
+}
+.header__action-list {
+  display: flex;
+}
+.header__language {
+  margin-right: 20px;
+}
+@media (max-width: 959px) {
+  .header__language {
+    display: none;
+  }
+}
+.header__select {
+  border: none;
+}
+.header__currency {
+  margin-right: 20px;
+}
+@media (max-width: 959px) {
+  .header__currency {
+    display: none;
+  }
+}
+.header__phone-number {
+  margin-right: 20px;
+}
+@media (max-width: 959px) {
+  .header__phone-number {
+    display: none;
+  }
+}
+.header__search {
+  margin-right: 20px;
+}
+.header__cart {
+  margin-right: 0px;
+}
+
+#burger:checked + label + nav {
+  display: block;
+}
+
+#burger:checked + label::before {
+  content: url("../img/close menu.svg");
+}
+
+.way {
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+}
+.way__items {
+  font-weight: 600;
+  padding: 0;
+  padding-bottom: 21px;
+  list-style: none;
+  display: flex;
+  font-size: 12px;
+  line-height: 166.4%;
+  align-items: center;
+}
+@media (max-width: 959px) {
+  .way__items {
+    display: none;
+  }
+}
+.way__icon {
+  width: 25px;
+  height: 0.7px;
+  margin: 5px;
+}
+.way__item_floral-ornament {
+  font-weight: 300;
+}
+
+.way-adaptive {
+  display: none;
+  margin-left: 5.5%;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  padding-bottom: 20px;
+}
+@media (max-width: 959px) {
+  .way-adaptive {
+    display: inline-block;
+  }
+}
+.way-adaptive__icon {
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+.way-adaptive__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card__content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card__column {
+  box-sizing: border-box;
+  width: 50%;
+}
+@media (max-width: 900px) {
+  .card__column {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .card__column_left {
+    margin-left: 5.5%;
+    margin-right: 5.5%;
+    overflow: hidden;
+  }
+}
+.card__column_right {
+  padding-left: 8.2%;
+  padding-right: 5.5%;
+}
+@media (max-width: 1065px) {
+  .card__column_right {
+    padding-left: 5.5%;
+  }
+}
+.card__main-img {
+  width: 100%;
+}
+.card__main-img img {
+  width: 100%;
+}
+.card__small-imgs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 900px) {
+  .card__small-imgs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+  }
+}
+.card__small-img {
+  width: calc(50% - 20px);
+  padding-top: 40px;
+}
+@media (max-width: 900px) {
+  .card__small-img {
+    padding-top: 6px;
+    min-width: 133px;
+    min-height: 162px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}
+.card__small-img img {
+  width: 100%;
+}
+.card__scroll-arrows {
+  display: none;
+  width: 100%;
+  padding-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .card__scroll-arrows {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-right: 5.5%;
+    margin-top: 20px;
+  }
+}
+.card__scroll-btn {
+  background: none;
+  width: 40px;
+  padding: 0;
+  border-width: 0;
+}
+.card__scroll-btn_right img {
+  transform: rotate(180deg);
+}
+.card__brand {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #B5B5B5;
+}
+@media (max-width: 805px) {
+  .card__brand {
+    display: none;
+  }
+}
+.card__title {
+  font-family: "Dela Gothic One";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.card__info {
+  display: flex;
+  align-items: center;
+  gap: 47px;
+}
+@media (max-width: 805px) {
+  .card__info {
+    gap: 86px;
+  }
+}
+.card__color-paragraph {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 23px;
+}
+.card__quantity {
+  display: flex;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 23px;
+}
+.card__input {
+  box-sizing: border-box;
+  border: none;
+  width: 21px;
+  text-align: center;
+}
+.card__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.card__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.card__btn {
+  background: #F4F4F4;
+  border: none;
+  width: 21px;
+  height: 21px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 805px) {
+  .card__btn {
+    width: 30px;
+    height: 30px;
+  }
+}
+.card__btn-img {
+  width: 100%;
+}
+.card__btn-group {
+  display: flex;
+  gap: 15px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 166.19%;
+}
+@media (max-width: 805px) {
+  .card__btn-group {
+    gap: 20px;
+  }
+}
+.card__btn-size:hover {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 166.2%;
+}
+.card__btn-input {
+  display: none;
+}
+.card__btn-input:checked + label {
+  font-weight: 700;
+}
+.card__size-chart {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card__price {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 23px;
+}
+.card__btn-buy {
+  transition: background-color 1s ease-out;
+  transition: color 0.5s ease-out;
+  display: inline-block;
+  color: #FFFFFF;
+  border: #DA1F39 1px solid;
+  background: #DA1F39;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 17px 79px;
+  text-transform: uppercase;
+}
+.card__btn-buy:hover {
+  color: #DA1F39;
+  background: #FFFFFF;
+}
+.card__main {
+  margin-top: 70px;
+}
+@media (max-width: 900px) {
+  .card__main {
+    margin-top: 0;
+  }
+}
+.card__details {
+  position: relative;
+  padding-top: 15px;
+}
+.card__details[open] summary::after {
+  content: url("../img/bx_bx-minus.svg");
+}
+.card__summary {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  padding-bottom: 15px;
+}
+.card__summary:before {
+  content: "";
+  position: absolute;
+  height: 0.7px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+}
+.card__summary::after {
+  content: url("../img/ant-design_plus-outlined.svg");
+}
+.card__summary_about:before {
+  display: none;
+}
+.card__summary-paragraph {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.cart {
+  width: 36.5%;
+  position: absolute;
+  z-index: 100;
+  box-sizing: border-box;
+  font-size: 12px;
+  padding: 40px;
+  background: #EFEFEF;
+  box-shadow: 6px 6px 10px rgba(179, 179, 179, 0.25), 4px 4px 8px rgba(135, 135, 135, 0.25);
+}
+@media (max-width: 1025px) {
+  .cart {
+    padding: 30px;
+  }
+}
+@media (max-width: 900px) {
+  .cart {
+    display: none;
+  }
+}
+.cart__headline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.cart__item-added {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.cart__product-img {
+  float: left;
+  padding-right: 20px;
+}
+.cart__title-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.cart__product-name {
+  font-weight: 600;
+  line-height: 15px;
+}
+.cart__close {
+  border: none;
+}
+.cart__product-color {
+  display: flex;
+  gap: 62px;
+  padding-bottom: 5px;
+}
+@media (max-width: 1065px) {
+  .cart__product-color {
+    gap: 52px;
+  }
+}
+.cart__product-size {
+  padding-bottom: 5px;
+  display: flex;
+  gap: 51px;
+}
+@media (max-width: 1065px) {
+  .cart__product-size {
+    gap: 41px;
+  }
+}
+.cart__product-size select {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  font-feature-settings: "pnum" on, "lnum" on;
+  border: none;
+  background: none;
+}
+.cart__product-quantity {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 1065px) {
+  .cart__product-quantity {
+    gap: 30px;
+  }
+}
+.cart__product-quantity select {
+  border: none;
+  background: none;
+}
+.cart__price {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 23px;
+}
+.cart__payable {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.cart__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1278px) {
+  .cart__btns {
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  .cart__btns {
+    flex-direction: row;
+  }
+}
+.cart__btn-continue {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 1278px) {
+  .cart__btn-continue {
+    padding-bottom: 15px;
+  }
+}
+.cart__btn-buy {
+  transition: background-color 1s ease-out;
+  transition: color 0.5s ease-out;
+  display: inline-block;
+  color: #FFFFFF;
+  border: #DA1F39 1px solid;
+  background: #DA1F39;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 20px 49px;
+  text-transform: uppercase;
+}
+.cart__btn-buy:hover {
+  color: #DA1F39;
+  background: #FFFFFF;
+}
+@media (max-width: 1344px) {
+  .cart__btn-buy {
+    padding: 15px 35px;
+  }
+}
+
+.scroll {
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.scroll__headline {
+  font-family: "Dela Gothic One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 140.3%;
+  text-transform: uppercase;
+  padding-top: 130px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 823px) {
+  .scroll__headline {
+    font-size: 18px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+}
+.scroll__headline-paragraph {
+  margin: 0;
+}
+.scroll__arrows {
+  display: flex;
+  gap: 6px;
+}
+@media (max-width: 805px) {
+  .scroll__arrows {
+    display: none;
+  }
+}
+.scroll__arrows-btn {
+  border: none;
+  background: none;
+}
+.scroll__arrows-btn_right img {
+  transform: rotate(180deg);
+}
+.scroll__cards {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 3.47%;
+}
+.scroll__cards::-webkit-scrollbar {
+  height: 3px;
+}
+.scroll__cards::-webkit-scrollbar-track {
+  background: rgba(218, 31, 57, 0.3);
+}
+.scroll__cards::-webkit-scrollbar-thumb {
+  background: #DA1F39;
+}
+.scroll__card {
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+.scroll__img {
+  width: 100%;
+  height: 415px;
+}
+.scroll__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.scroll__img img:hover {
+  transform: scale(0.9);
+}
+.scroll__title {
+  margin-top: 10px;
+  height: 72px;
+}
+.scroll__title-headline {
+  margin: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 23px;
+}
+.scroll__price-paragraph {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 166.2%;
+}
+
+.footer {
+  background: #F4F4F4;
+}
+.footer__logo {
+  text-align: center;
+}
+.footer__logo-icon {
+  width: 184px;
+}
+.footer__content {
+  font-size: 14px;
+  line-height: 166.19%;
+  display: flex;
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+  justify-content: space-between;
+}
+@media (max-width: 900px) {
+  .footer__content {
+    flex-wrap: wrap;
+  }
+}
+.footer__link {
+  list-style: none;
+  padding-bottom: 10px;
+}
+.footer__link_red {
+  padding-top: 20px;
+}
+.footer__link_red a {
+  color: #DA1F39;
+  font-weight: 700;
+}
+.footer__list {
+  list-style: none;
+}
+@media (max-width: 959px) {
+  .footer__list {
+    padding-left: 0;
+  }
+}
+.footer__list_2-columns {
+  columns: 2;
+}
+.footer__list_1-column {
+  columns: 1;
+  padding-left: 0;
+}
+@media (max-width: 900px) {
+  .footer__contacts {
+    padding-left: 0px;
+    padding-right: 150px;
+    order: 1;
+  }
+}
+.footer__contact {
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+.footer__net-title {
+  text-decoration: underline;
+  padding-bottom: 12.75px;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .footer__social-networks {
+    padding-left: 40px;
+  }
+}
+.footer__network {
+  padding-bottom: 57px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copyright {
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .footer__copyright {
+    display: none;
+  }
+}
+.footer__copyright_adaptive {
+  display: none;
+}
+@media (max-width: 900px) {
+  .footer__copyright_adaptive {
+    display: block;
+  }
+}
